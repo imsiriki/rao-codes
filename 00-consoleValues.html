@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>consoleValues</title>
+    </head>
+
+    <body>
+        <script>
+            /*
+                🚀 NaN can never be equal to anything even itself. 
+                📌 NaN Property represents "Not a Number".  It indicates a value that is not a legal number.
+                Use isNaN() method to check for NaN:
+                📌isNaN() returns true when the value is "Not a Number".
+                📌isNaN() returns false when the value is a valid number.
+                */
+
+            /*************:: console  :: *************/
+
+            console.log(+false) //output => 0
+            console.log(+null) //output => 0
+            console.log(-null) //output => 0
+            console.log(+"D") //output => NAN
+            console.log(+true) //output => 1
+            console.log(false - true); //output => (0-1)=> -1
+            console.log(null - undefined); //output => NAN
+            console.log(+undefined); //output => NAN
+            console.log(false - null); //output => (0-0)=>0
+            console.log(true - null); //output => (1-0)=1
+            console.log(1 - "1" + "1") //output => (1-"1") = (0+"1")=>01
+            console.log(2 + "2") //output : "22"
+            console.log(2 - "2") //output : 0
+            console.log(2 * "2") //output : 4
+            console.log(2 / "2") //output : 1
+            console.log(2 + +"2") //output : 4
+            console.log("2" + +2) //output : "22"
+            console.log(parseInt("Bittu")); // NaN
+            console.log(10 / "ABC"); // NaN
+            console.log(typeof NaN); // number
+            console.log(NaN == NaN); // false
+            console.log(isNaN(NaN)) // true
+
+            let Arr = ["A", "B", "C"];
+            console.log(Arr[+[]]) //output => A
+        </script>
+    </body>
+
+</html>

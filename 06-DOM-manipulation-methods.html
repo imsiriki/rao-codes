@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>DOM-manipulation-methods.html</title>
+    </head>
+
+    <body>
+        <style>
+            .newclass {
+                color: red;
+            }
+
+            .oldclass {
+                color: rgb(215, 219, 19);
+            }
+        </style>
+        <div id="innerHTMLiD"></div>
+        <p id="myParagraph"></p>
+        <img src="" id="myimage">
+        <div id="mystyleId">style text display blue color</div>
+
+        <div id="myclassListID" class="newclass oldclass">add class and remove class </div>
+        <script>
+            /*************:: innerHTML :: *************/
+            let element = document.getElementById('innerHTMLiD');
+            const op = element.innerHTML = 'inner html'
+            console.log(op)
+
+            /*************:: innerText :: *************/
+            let paragraph = document.getElementById('myParagraph');
+            const paraOp = paragraph.innerText = 'inner text add'
+            console.log(paraOp);
+
+            /*************:: setAttribute :: *************/
+            let image = document.getElementById('myimage');
+            const imgOp = image.setAttribute("src", 'new.jpg')
+            console.log(imgOp)
+
+            /*************:: style :: *************/
+            let mystyle = document.getElementById('mystyleId');
+            const mystyleOp = mystyle.style.color = 'blue'
+            console.log(mystyleOp)
+
+            /*************:: classList :: *************/
+            let getClassList = document.getElementById('myclassListID');
+            const addOp = getClassList.classList.add('newclass');
+            const removeOp = getClassList.classList.remove('oldclass');
+            console.log(newOp, removeOp)
+            classList
+        </script>
+
+    </body>
+
+</html>

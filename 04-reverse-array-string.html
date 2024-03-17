@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Reverse-STRING-ARRAY</title>
+    </head>
+
+    <body>
+        <script>
+            /*************:: string REVERSE :: *************/
+
+            //! EXAMPLE 1
+            let original = 'Hello Work';
+            let reversedString = [...original].reverse().join('');
+            console.log(reversedString); //OP: kroW olleH
+
+
+            //! EXAMPLE 11- use function
+            function reverseString(str) {
+                return Array.from(str).reduceRight((acc, char) => acc + char, '');
+            }
+            console.log(reverseString("Hello Work")); //OP: kroW olleH
+
+            /*************:: Array REVERSE :: *************/
+
+            //! EXAMPLE 2:without modifying original array
+            let arr11 = [10, 20, 30, 40];
+            const reversedArray = [...arr11].reverse();
+            console.log(reversedArray) //OP:  [40, 30, 20, 10]
+
+            //! EXAMPLE 3
+            let arr22 = [11, 22, 33, 44];
+            let arr33 = [];
+            for (let i = arr22.length - 1; i >= 0; i--) {
+                arr33.push(arr22[i])
+            }
+            console.log(arr33) //OP:  [44, 33, 22, 11]
+        </script>
+    </body>
+
+</html>

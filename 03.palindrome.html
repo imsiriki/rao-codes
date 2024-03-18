@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>palindrome</title>
-    </head>
+  <head>
+    <title>palindrome</title>
+  </head>
 
-    <body>
-        <script>
-            // EXAMPLE 1- number, string
-            var x = 121; // string: 'malayalam'
-            var res = x.toString().split('').reverse().join('');
-            if (x == res) {
-                console.log('palindrom');
-            } else {
-                console.log('not a palandrom')
-            }
+  <body>
+    <script>
+      /*************:: EXAMPLE 1- number, string :: *************/
+      var x = 121; // string: 'malayalam'
+      var res = x.toString().split("").reverse().join("");
+      if (x == res) {
+        console.log("palindrom");
+      } else {
+        console.log("not a palandrom");
+      }
 
 
-            // EXAMPLE 2- function
-            function checkPaldrom(str) {
-                return str == str.toString().split('').reverse().join('');
+      /*************:: EXAMPLE 2- function :: *************/
+      function checkPaldrom(str) {
+        return str == str.toString().split("").reverse().join("");
+      }
+      console.log(checkPaldrom(121)); // true
+      console.log(checkPaldrom(12561)); // false
 
-            }
-            console.log(checkPaldrom(121)); // true
-            console.log(checkPaldrom(12561)); // false
+      console.log(checkPaldrom("malayalam")); // true
+      console.log(checkPaldrom("radar")); // true
+      console.log(checkPaldrom("srinivas")); // false
 
-            console.log(checkPaldrom('malayalam')); // true
-            console.log(checkPaldrom('radar')); // true
-            console.log(checkPaldrom('srinivas')); // false
-        </script>
-    </body>
+
+      /*************:: EXAMPLE 3 -  separate palindrome number from array :: *************/
+      function findPalindrome(arr) {
+        return arr.filter((data) => {
+          return data.split("").reverse().join("") == data;
+        });
+      }
+
+      let checkArrayPalindrome = ["radar", "hello", "level", "world", "madam", "bba", "racecar"];
+      console.log(findPalindrome(checkArrayPalindrome)); //OP:  ['radar', 'level', 'madam', 'racecar']
+    </script>
+  </body>
 
 </html>

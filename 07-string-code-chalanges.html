@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>string-code-chalanges</title>
+  </head>
+  <body>
+    <style></style>
+
+    <script>
+      /*************:: // Q-1 :: *************/
+      const a = {};
+      const b = { key: "b", name: "srinu" };
+      const c = { key: "c", name: "vasu" };
+      const d = { key: "d", name: "ramu" };
+      a[b] = 123;
+      a[c] = 456;
+      a[d] = 987;
+      console.log(a[b]); //op 987
+
+      /*************:: // Q-2 :: *************/
+      var fullName = "Bittu";
+      var obj = {
+        fullName: "Rahul",
+        prop: {
+          fullName: "Suraj",
+          getFullName: function () {
+            return this.fullName;
+          },
+        },
+      };
+      console.log(obj.prop.getFullName()); // op: "Suraj"
+      const getName = obj.prop.getFullName;
+      console.log(getName()); //op: Bittu
+
+      /*************:: innerText :: *************/
+
+      /*************:: setAttribute :: *************/
+
+      /*************:: style :: *************/
+
+      /*************:: classList :: *************/
+    </script>
+  </body>
+</html>

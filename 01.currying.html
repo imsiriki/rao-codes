@@ -11,13 +11,14 @@
         <p> Currying in JavaScript is a functional programming technique where a function with multiple arguments is
             transformed into a sequence of nested functions, each taking a single argument. </p>
         <script>
-            //THIS IS NORMAL FUNCTION
+             /*************:: // THIS IS NORMAL FUNCTION :: *************/
             function addTwoNumber(a, b) {
                 return a + b;
             }
             console.log(addTwoNumber(2, 3)) //output : 5
 
-            //! EXAMPLE 1
+          
+            /*************:: EXAMPLE 1 :: *************/
             function add(a) {
                 return function (b) {
                     return function (c) {
@@ -27,7 +28,7 @@
             }
             console.log(add(2)(3)(5)); // output : 10
 
-            //! EXAMPLE 2
+          /*************:: EXAMPLE 2 :: *************/
             function addOf(a) {
                 function sum(b) {
                     a = a + b;
@@ -41,7 +42,8 @@
             }
             console.log(addOf(2)(3)(5)(7).toString()); // output : 17
 
-            //! EXAMPLE 3
+       
+            /*************::  EXAMPLE 3 :: *************/
             const getlunch = (ingredient1) => {
                 return (ingredient2) => {
                     return (ingredient3) => {

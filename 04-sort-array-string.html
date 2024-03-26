@@ -44,8 +44,20 @@
         }
       }
       console.log("sortingAscending", arr); // op: [1, 2, 5, 8, 22, 44]
+      /*************:: SORT Merge values :: *************/
 
-     
+      const a = [1, 2, 0, 0, 0];
+      const b = [2, 4, 5, 6];
+      const c = 3;
+
+      const merge = [...a, ...b, c];
+      console.log(merge); // op: [1, 2, 0, 0, 0, 2, 4, 5, 6, 3]
+
+      const z = merge.sort((a, b) => a - b); //ascending order
+      console.log(z); //op: [0, 0, 0, 1, 2, 2, 3, 4, 5, 6]
+
+      const output = z.slice(3);
+      console.log(output); //op: [1, 2, 2, 3, 4, 5, 6]
     </script>
   </body>
 </html>

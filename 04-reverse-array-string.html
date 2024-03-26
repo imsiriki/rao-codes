@@ -1,51 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Reverse-STRING-ARRAY</title>
+  </head>
 
-    <head>
-        <title>Reverse-STRING-ARRAY</title>
-    </head>
+  <body>
+    <script>
+      /*************:: string REVERSE :: *************/
 
-    <body>
-        <script>
-            /*************:: string REVERSE :: *************/
+      //! EXAMPLE 1
+      let original = "Hello Work";
+      let reversedString = [...original].reverse().join("");
+      console.log(reversedString); //OP: kroW olleH
 
-            //! EXAMPLE 1
-            let original = 'Hello Work';
-            let reversedString = [...original].reverse().join('');
-            console.log(reversedString); //OP: kroW olleH
+      //! EXAMPLE 11- use function
+      function reverseString(str) {
+        return Array.from(str).reduceRight((acc, char) => acc + char, "");
+      }
+      console.log(reverseString("Hello Work")); //OP: kroW olleH
 
+      //! EXAMPLE 3 -- for loop method
+      function reverseString(str) {
+        var newString = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+          newString += str[i];
+        }
+        return newString;
+      }
+      console.log(reverseString("hello"));// op: olleh
 
-            //! EXAMPLE 11- use function
-            function reverseString(str) {
-                return Array.from(str).reduceRight((acc, char) => acc + char, '');
-            }
-            console.log(reverseString("Hello Work")); //OP: kroW olleH
+      /*************:: Array REVERSE :: *************/
 
-           //! EXAMPLE 3 -- for loop method
-            function reverseString(str) {
-                var newString = "";
-                for (var i = str.length - 1; i >= 0; i--) {
-                    newString += str[i];
-                }
-                return newString;
-            }
-             reverseString('hello');
-             
-            /*************:: Array REVERSE :: *************/
+      //! EXAMPLE 2:without modifying original array
+      let arr11 = [10, 20, 50, 90, 30, 40];
+      const reversedArray = [...arr11].reverse();
+      console.log(reversedArray); //OP:  [40, 30, 90, 50, 20, 10]
 
-            //! EXAMPLE 2:without modifying original array
-            let arr11 = [10, 20, 30, 40];
-            const reversedArray = [...arr11].reverse();
-            console.log(reversedArray) //OP:  [40, 30, 20, 10]
-
-            //! EXAMPLE 3
-            let arr22 = [11, 22, 33, 44];
-            let arr33 = [];
-            for (let i = arr22.length - 1; i >= 0; i--) {
-                arr33.push(arr22[i])
-            }
-            console.log(arr33) //OP:  [44, 33, 22, 11]
-        </script>
-    </body>
-
+      //! EXAMPLE 3
+      let arr22 = [11, 22, 66, 33, 44];
+      let arr33 = [];
+      for (let i = arr22.length - 1; i >= 0; i--) {
+        arr33.push(arr22[i]);
+      }
+      console.log(arr33); //OP: [44, 33, 66, 22, 11]
+    </script>
+  </body>
 </html>

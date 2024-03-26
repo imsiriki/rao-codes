@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Reverse-STRING-ARRAY</title>
+  </head>
 
-    <head>
-        <title>Reverse-STRING-ARRAY</title>
-    </head>
+  <body>
+    <script>
+      /*************:: SORT Array number :: *************/
+      let numberArr = [5, 2, 100, 1, 20, 3];
+      numberArr.sort((a, b) => {
+        return a - b;
+      });
+      console.log(numberArr); //[1, 2, 3, 5, 20, 100]
 
-    <body>
-        <script>
-            /*************:: SORT  :: *************/     
+      /*************:: SORT Array STRING  :: *************/
+      const array3 = ["banana", "apple", "orange", "grape"];
+      const sortedArray3 = [...array3].sort();
+      console.log(sortedArray3); // Output: ["apple", "banana", "grape", "orange"]
 
+      /*************:: SORT Array object :: *************/
+      const students = [
+        { name: "Sara", age: 24 },
+        { name: "John", age: 22 },
+        { name: "abc", age: 27 },
+      ];
+      const sortByAge = students.sort((a, b) => a.age - b.age);
+      console.log(sortByAge); //sort by Age
 
-            //! EXAMPLE 11- array NUMBER assending order
-           let arr = [5,2,100,1,20,3];
-           arr.sort((a,b)=>{
-           return a-b
-           })
-           console.log(arr) //[1, 2, 3, 5, 20, 100]
-             
+      const sortByNameACC = students.sort(
+        (a, b) => a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()
+      );
+      console.log(sortByNameACC); //sort by name
 
+      /*************:: SORT for loop :: *************/
+      var arr = [22, 44, 8, 1, 5, 2];
+      for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+          if (arr[i] > arr[j]) {
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+        }
+      }
+      console.log("sortingAscending", arr); // op: [1, 2, 5, 8, 22, 44]
 
-
-            /*************:: Array STRING SORT :: *************/       
-               //! EXAMPLE 3 : array string assending order
-         const array3 = ['banana', 'apple', 'orange', 'grape'];
-         const sortedArray3 = [...array3].sort();
-         console.log(sortedArray3); // Output: ["apple", "banana", "grape", "orange"]
-        </script>
-    </body>
-
+     
+    </script>
+  </body>
 </html>

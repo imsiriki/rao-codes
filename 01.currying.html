@@ -1,70 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>currying</title>
+  </head>
 
-    <head>
-        <title>currying </title>
-    </head>
+  <body>
+    <p>      Currying is a function that takes one argument at a time and returns a new function expecting the next argument.    </p>
+    <p>      Currying in JavaScript is a functional programming technique where a      function with multiple arguments is transformed into a sequence of nested      functions, each taking a single argument.    </p>
+    <script>
+      /*************:: // THIS IS NORMAL FUNCTION :: *************/
+      function addTwoNumber(a, b) {
+        return a + b;
+      }
+      console.log(addTwoNumber(2, 3)); //output : 5
 
-    <body>
-        <p> Currying is a function that takes one argument at a time and returns a new function expecting the next
-            argument. </p>
-        <p> Currying in JavaScript is a functional programming technique where a function with multiple arguments is
-            transformed into a sequence of nested functions, each taking a single argument. </p>
-        <script>
-             /*************:: // THIS IS NORMAL FUNCTION :: *************/
-            function addTwoNumber(a, b) {
-                return a + b;
-            }
-            console.log(addTwoNumber(2, 3)) //output : 5
+      /*************:: EXAMPLE 1 :: *************/
+      function add(a) {
+        return function (b) {
+          return function (c) {
+            return a + b + c;
+          };
+        };
+      }
+      console.log(add(2)(3)(5)); // output : 10
 
-          
-            /*************:: EXAMPLE 1 :: *************/
-            function add(a) {
-                return function (b) {
-                    return function (c) {
-                        return a + b + c;
-                    }
-                }
-            }
-            console.log(add(2)(3)(5)); // output : 10
+      /*************:: EXAMPLE 2 :: *************/
+      function addOf(a) {
+        function sum(b) {
+          a = a + b;
+          return sum;
+        }
+        sum.toString = function () {
+          return a;
+        };
+        return sum;
+      }
+      console.log(addOf(2)(3)(5)(7).toString()); // output : 17
 
-          /*************:: EXAMPLE 2 :: *************/
-            function addOf(a) {
-                function sum(b) {
-                    a = a + b;
-                    return sum;
-                }
-                sum.toString = function () {
-                    return a;
-                }
-                return sum;
+      /*************::  EXAMPLE 3 :: *************/
+      const getlunch = (ingredient1) => {
+        return (ingredient2) => {
+          return (ingredient3) => {
+            return `${ingredient1}, ${ingredient2}, ${ingredient3}`;
+          };
+        };
+      };
+      console.log(getlunch("rice")("curd")("dal")); // output : rice, curd, dal
 
-            }
-            console.log(addOf(2)(3)(5)(7).toString()); // output : 17
+      /*************:: EXAMPLE 4 :: *************/
+      function sumOfAllNaturalNumber(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum = sum + i;
+        }
+        return sum;
+      }
 
-       
-            /*************::  EXAMPLE 3 :: *************/
-            const getlunch = (ingredient1) => {
-                return (ingredient2) => {
-                    return (ingredient3) => {
-                        return `${ingredient1}, ${ingredient2}, ${ingredient3}`;
-                    }
-                }
-            }
-            console.log(getlunch('rice')('curd')('dal')); // output : rice, curd, dal
-
-
-
-            function sumOfAllNaturalNumber(n) {
-                let sum = 0;
-                for (let i = 1; i <= n; i++) {
-                    sum = sum + i;
-                }
-                return sum;
-            }
-
-            console.log(sumOfAllNaturalNumber(5))
-        </script>
-    </body>
-
+      console.log(sumOfAllNaturalNumber(5)); //op:15
+    </script>
+  </body>
 </html>

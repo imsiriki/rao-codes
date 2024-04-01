@@ -27,7 +27,21 @@
         }
         return newString;
       }
-      console.log(reverseString("hello"));// op: olleh
+      console.log(reverseString("hello i love javascript"));// op: olleh
+
+      //! EXAMPLE 4 -- FUNCTION method
+      function reverseStr(str){
+        let updateStr =[];
+        let str1 =str.split(" ");
+        for(let i=0; i<str1.length; i++){
+          updateStr.push(str1[i].split("").reverse().join(" "));
+        }
+        return updateStr.join(" ");
+
+      }
+      const str ="i love javascript";
+      console.log(reverseStr(str))//i e v o l t p i r c s a v a j
+
 
       /*************:: Array REVERSE :: *************/
 

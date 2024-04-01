@@ -32,7 +32,21 @@
       const getName = obj.prop.getFullName;
       console.log(getName()); //op: Bittu
 
-      /*************:: innerText :: *************/
+      /*************:: Splice METHOD:: *************/
+
+      // Here tricks to remember:
+      //Splice always split the original array, this means- original array get affected.
+
+     // splice syntax= array.splice(startIndex, deleteCount, item1, item2, ...)
+     // Here, we have used splice, so both array will be affected.
+      //arr1- [1,2]
+      //arr2- [3,4,5]
+
+      let arr1 =[1,2,3,4,5];
+      let arr2 = arr1.splice(2,3);
+      console.log(arr1); //Array [ 1, 2 ]
+      console.log(arr2);//Array(3) [ 3, 4, 5 ]
+
 
       /*************:: setAttribute :: *************/
 

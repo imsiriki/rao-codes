@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>shorts-code-chalanges</title>
+  </head>
+  <body>
+    <style></style>
+
+    <script>
+      /*************:: // Q-1 Javascript Set methods  :: *************/
+      const a = new Set([1, 2, 3]);
+      const b = new Set([1, 4]);
+
+      console.log(a.union(b)); //op: Set(4) {1, 2, 3, 4}
+      console.log(a.intersection(b)); //op:Set(1) {1}
+      console.log(a.difference(b)); //Set(2) {2, 3}
+      console.log(a.symmetricDifference(b)); //Set(3) {2, 3, 4}
+
+
+      /*************:: // Q-2 reviver in json parse :: *************/
+      const str = '{"id":"7","name":"srinivas"}';
+      const obj1 = JSON.parse(str);
+      console.log(obj1); //{id: '7', name: 'srinivas'}//7 is string
+
+      const obj2 = JSON.parse(str, (key, value) => {
+        if (key === "id") {
+          value = Number(value);
+        }
+        return value;
+      });
+      console.log(obj2); //{id: 7, name: 'srinivas'} // 7 is number
+
+
+      /*************:: // Q-3 Array with in JavaScript | Array.prototype.with() :: *************/
+      const originalArray = ["a", "b", "c", "d"];
+      console.log(originalArray); // ['a', 'b', 'c', 'd']
+
+      const newArray = originalArray.with(1, "x");
+      console.log(newArray); //['a', 'x', 'c', 'd']
+
+
+      /*************:: // Q-3 zip in RxJS:: *************/
+
+    //  const details1$ = new Subject<number>();
+    //    const details2$ = new Subject<string>();
+    //      const op = zip([details1$, details2$]).subscribe((d) => console.log(d));
+    //      details1$.next(1);
+    // details2$.next('a'); //[1, 'a']
+    //      details1$.next(2);
+    //      details2$.next('c');
+    //      details1$.next(3);
+    // details2$.next('srinivas')//[3, 'srinivas']
+    //      console.log(op)
+
+
+      /*************:: // Q-2 :: *************/
+
+      /*************:: // Q-2 :: *************/
+
+      /*************:: // Q-2 :: *************/
+      /*************:: // Q-2 :: *************/
+      /*************:: // Q-2 :: *************/
+      /*************:: // Q-2 :: *************/
+
+      /*************:: // Q-2 :: *************/
+      /*************:: // Q-2 :: *************/
+      /*************:: // Q-2 :: *************/
+    </script>
+  </body>
+</html>

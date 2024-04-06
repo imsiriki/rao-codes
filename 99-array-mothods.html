@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ARRAY-METHODS</title>
+  </head>
+
+  <body>
+    <script>
+
+/****************************************************************
+:: FOR EACH ::
+*****************************************************************/
+
+      //! EXAMPLE 1
+      const ex1names = ['srinu','vasue','laxmi'];
+      ex1names.forEach((name)=>{
+        console.log(name);
+      })//op: srinu,vasue,laxmi
+
+
+      //! EXAMPLE 2- for loop method
+       const ex2nums =["a","b","c"];
+       for(let i=0; i<ex2nums.length; i++){
+        console.log(ex2nums[i]);
+       }//op: a,b,c
+
+
+      //! EXAMPLE 3 -- for loop method 
+      const ex3nums = ['a','b','c'];
+      ex2nums.forEach((names1)=>{console.log(names1)}) //op : a,b,c
+
+      //! EXAMPLE 4
+        const ex4Number= [1,2,3,4];
+        const digits =[];
+        const mynumbers=[];
+        //using for loop
+        for(let i=0; i<ex4Number.length; i++){
+          digits.push(ex4Number[i]+2)
+        }
+        console.log(digits); //op: [3, 4, 5, 6]
+        //using for each
+        ex4Number.forEach((num)=>{
+          mynumbers.push(num + 3);
+        })
+        console.log(mynumbers)//op:  [4, 5, 6, 7]
+
+
+
+/****************************************************************
+:: flatMap() ::
+*****************************************************************/
+//  this method maps each element using a mapping function, then flatterns the result into  a new  array . 
+
+      //! EXAMPLE 1
+      const ex1flatmap = [1,2,3];
+      const  results = ex1flatmap.flatMap((e)=> ( e===2 ? [2,5] : 1));
+      console.log(results);//op:  [1, 2, 5, 1]
+    </script>
+  </body>
+</html>

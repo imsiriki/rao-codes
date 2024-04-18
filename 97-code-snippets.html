@@ -56,7 +56,18 @@
         console.log(mergeTwoArrays([1,2,3], [3,2,4,5])); //OP: [1, 2, 3, 4, 5]
 
       //! EXAMPLE 2
+        const numbers = [2, 4, 6, 7, 8, 10, 12, 15, 17, 23, 44];
+        const fives = [];
+        const numsadd = numbers.map((a, i) => a + i); // i is index value
+        console.log(`numbers add with index: ${numsadd}`); //numbers add with index: 2,5,8,10,12,15,18,22,25,32,54
+        numsadd.forEach(v => {
+          if (v % 5 === 0) fives.push(v);
+        });
+        console.log(`fives: ${fives}`); //fives: 5,10,15,25
 
+
+
+        
     </script>
   </body>
 </html>

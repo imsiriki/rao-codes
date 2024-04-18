@@ -7,6 +7,15 @@
   <body>
     <script>
 
+         const data = [
+         { id: 1, category: 'A', value: 'foo' },
+         { id: 2, category: 'B', value: 'bar' },
+         { id: 3, category: 'A', value: 'baz' },
+         { id: 4, category: 'C', value: 'qux' },
+         { id: 5, category: 'B', value: 'quux' }
+         ];
+
+
 /****************************************************************
 :: FOR EACH ::
 *****************************************************************/
@@ -55,6 +64,27 @@
       const ex1flatmap = [1,2,3];
       const  results = ex1flatmap.flatMap((e)=> ( e===2 ? [2,5] : 1));
       console.log(results);//op:  [1, 2, 5, 1]
+
+
+/****************************************************************
+:: Diffrence FILTER and MAP methods ::
+*****************************************************************/
+    //! EXAMPLE 1
+      const filterMethod = data.filter(number => number.id > 4);
+        console.log(filterMethod, 'filter'); // Output: [{ "id": 5, "category": "B", "value": "quux" } ]
+
+      const mapMethod = data.map(number => number.id > 4);
+        console.log(mapMethod, 'map'); // Output: [false, false, false, false, true]
+
+    //! EXAMPLE 2
+        const numbers = [1, 2, 3, 4, 5];
+
+        const evenNumbers = numbers.filter(number => number % 2 === 0);
+        console.log(evenNumbers); // Output: [2, 4]
+
+        const evenNumbersMap = numbers.map(number => number % 2 === 0);
+        console.log(evenNumbersMap); // Output: [false, true, false, true, false]
+
     </script>
   </body>
 </html>

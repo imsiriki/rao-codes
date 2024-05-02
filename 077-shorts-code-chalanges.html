@@ -53,11 +53,42 @@
     //      console.log(op)
 
 
-      /*************:: // Q-2 :: *************/
+      /*************:: // Q-4 Declare common variables outside of the loop:: *************/
 
-      /*************:: // Q-2 :: *************/
+      const scores = [20, 30, 35, 24, 70, 90, 100];
+        const passingScore = 35;
+        for (const score of scores) {
+          if (score >= passingScore) {
+            //loging here
+            console.log('score :>> ', score); //Output: score :>> 35,score :>> 70,score :>> 90,score :>> 100
+          }
+        }
 
-      /*************:: // Q-2 :: *************/
+      /*************:: // Q-5 Use let instead of var for blocked statement :: *************/
+       const calculateSalary = (bonus) => {
+          if (bonus > 2000) {
+            var salary = 4000;
+            let total = salary * 3;
+          }
+          console.log('salary :>> ', salary);
+          console.log('total :>> ', total);
+        }
+       //Case 1
+       //calculateSalary(4000); //OP : salary :>> 4000 , Uncaught ReferenceError: total is not defined
+       //CASE2
+       //calculateSalary(1000); //OP : salary :>> undefined, Uncaught ReferenceError: total is not defined
+
+      /*************:: // Q-6 Use of nullish coalescing operator with numbers :: *************/
+        let number1 = 0;
+        let number2;
+        const defaultNumber1 = number1 || 1;
+        const defaultNumber2 = number2 || 2;
+        console.log('defaultNumber1 :>> ', defaultNumber1); //OP: 1
+        console.log('defaultNumber2 :>> ', defaultNumber2);//OP: 2
+        const defaultNumber3 = number1 ?? 1;
+        const defaultNumber4 = number2 ?? 2;
+        console.log('defaultNumber3 :>> ', defaultNumber3);//OP: 0
+        console.log('defaultNumber4 :>> ', defaultNumber4);//OP: 2
       /*************:: // Q-2 :: *************/
       /*************:: // Q-2 :: *************/
       /*************:: // Q-2 :: *************/

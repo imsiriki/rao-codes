@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>        <title>Duplicates test</title>    </head>
+
+    <head>
+        <title>Duplicates test</title>
+    </head>
+
     <body>
         <script>
             //! Duplicate values in Array
@@ -17,7 +21,9 @@
             });
             console.log("Removed Dublicate values in Array", removedValues) //Output: Remove Duplicates: [1, 2, 3, 5]
 
-            //EXAMPLE 2- USE SETMETHOD
+
+
+            /*************:: // //EXAMPLE 2- USE SETMETHOD :: *************/
             const setmethod = [...new Set(x)];
             console.log("use setmethod", setmethod); //Output: use SETMETHOD: [1, 2, 3, 5]
 
@@ -33,12 +39,15 @@
             }
             console.log(newArr) //Output: [1, 2, 3, 5, 6, 10]
 
-            // EXAMPLE 4- using set
+
+            /*************:: // EXAMPLE 4- using set:: *************/
             let arrRemove = [1, 2, 3, 4, 4, 2, 5, 6];
             let newArrRemove = [...new Set(arrRemove)]
             console.log(newArrRemove); //Output:[1, 2, 3, 5, 6, 10]
 
-            // EXAMPLE 5- using forEach
+            // E
+
+            /*************:: EXAMPLE 5- using forEach:: *************/
             let myArr = [1, 2, 3, 3, 2, 5, 6, 10];
             let result = [];
             myArr.forEach((item) => {
@@ -48,6 +57,17 @@
             });
 
             console.log(result) //Output: [1, 2, 3, 5, 6, 10]
+
+
+            /*************:: EXAMPLE 5- using set  strings:: *************/
+            // Original guest list with a duplicate entry
+            const guestList = ["Alice", "Bob", "Charlie", "Alice"];
+
+            // Remove duplicates by converting the array to a Set and back to an array
+            const uniqueGuestList = [...new Set(guestList)];
+
+            // uniqueGuestList will be ["Alice", "Bob", "Charlie"]
+            console.log(uniqueGuestList);
         </script>
     </body>
 

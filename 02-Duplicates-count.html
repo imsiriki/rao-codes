@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Duplicates count</title>
   </head>
@@ -40,6 +41,48 @@
       }
       const op = getFrequency("SIRIKI SRINIVAS");
       console.log(op);//{ "S": 3, "I": 5,"R": 2, "K": 1," ": 1,  "N": 1, "V": 1, "A": 1 }
-        </script>
+
+
+      /*************:: EXAMPLE -4 find repeat words in string :: *************/
+
+      let str = "I am not gonna live forever, but I wanna live while I am alive",
+        split = str.split(" "),
+        obj = {};
+
+      for (let i = 0; i < split.length; i++) {
+        if (obj[split[i]] === undefined) {
+          obj[split[i]] = 1;
+        } else {
+          obj[split[i]]++;
+        }
+      }
+      console.log(obj) //{   "I": 3, "am": 2,  "not": 1,  "gonna": 1, "live": 2, "forever,": 1,   "but": 1,   "wanna": 1,  "while": 1,  "alive": 1 }
+
+
+
+      let words = "I am not gonna live forever, but I wanna live while I am alive";
+
+      function countRepeatedWords(sentence) {
+        let words = sentence.split(" ");
+        let wordMap = {};
+
+        for (let i = 0; i < words.length; i++) {
+          let currentWordCount = wordMap[words[i]];
+          let count = currentWordCount ?
+            currentWordCount : 0;
+          wordMap[words[i]] = count + 1;
+        } return wordMap;
+      } 
+      console.log(countRepeatedWords(words)); //{ "I": 3, "am": 2, "not": 1, "gonna": 1, "live": 2, "forever,": 1, "but": 1, "wanna": 1, "while": 1, "alive": 1 }
+
+
+
+      
+      /*************:: EXAMPLE -4 find repeat words in string :: *************/
+      /*************:: EXAMPLE -4 find repeat words in string :: *************/
+      /*************:: EXAMPLE -4 find repeat words in string :: *************/
+
+    </script>
   </body>
+
 </html>

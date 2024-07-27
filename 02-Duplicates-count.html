@@ -17,6 +17,42 @@
       console.log(count); // {one: 3, two: 2, three: 1}
 
 
+/****************************************************************
+ :: An array count the words::
+*****************************************************************/
+    let myarray45 = ["hello", "world", "java", "hello", "java"];
+
+    function countWord(p) {
+      var count = {};
+      p.forEach((item) => {
+        if (count[item]) {
+          count[item]++
+        } else {
+          count[item] = 1;
+        }
+
+      });
+      return count;
+    }
+  console.log(countWord(myarray45));//Output:    { hello: 2, world: 1, java: 2 }
+
+
+
+/****************************************************************
+:: In array find a common value ::
+*****************************************************************/
+  const myWords = ["madb", "bas", "cab"];
+
+  const commonCharacters = myWords.reduce((common, word) => {
+    return common.filter(char => word.includes(char));
+  }, myWords[0].split(''));
+
+  console.log(commonCharacters); // Output: ["a", "b"]
+
+
+
+
+
       /*************:: EXAMPLE -2 :: *************/
       var countValues = ["a", "z", "m", "a", "c", "m"];
       var countEachValue = {};
@@ -128,11 +164,33 @@ console.log(designationCount); //Output:{ manager: 1, lead: 2, developer: 4 }
 */
 
 
+/****************************************************************
+:: Group items on the basis of age of given array of object::
+*****************************************************************/
+
+  const peoplenew = [
+    { id: 1, name: 'Alice', age: 25 },
+    { id: 2, name: 'Bob', age: 30 },
+    { id: 3, name: 'Alice', age: 28 },
+  ];
+
+  const groupByProperty = (arr, property) => arr.reduce((grouped, obj) => ({
+    ...grouped, [obj[property]]: [...(grouped[obj[property]] || []), obj]
+  }), {});
 
 
-
-
-
+  const result = groupByProperty(peoplenew, 'name');
+  console.log(result)
+/*
+  Output:
+  {
+    Alice: [
+          { id: 1, name: 'Alice', age: 25 },
+          { id: 3, name: 'Alice', age: 28 }
+       ],
+    Bob: [ { id: 2, name: 'Bob', age: 30 } ]
+  }
+*/
 
 
 

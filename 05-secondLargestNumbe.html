@@ -40,7 +40,18 @@
             }
 
 
-            console.log(secondLargestNumberNew([10, 5, 5, 10, 2, 13]))
+            console.log(secondLargestNumberNew([10, 5, 5, 10, 2, 13]));
+
+
+/****************************************************************
+ :: find the second-largest element in an array?::
+*****************************************************************/
+    const secondLargest = (arr) => [...new Set(arr)].sort((a, b) => b - a)[1];
+
+    const array = [5, 2, 8, 9, 2, 4, 7];
+    const result_2369 = secondLargest(array);
+
+    console.log(result_2369); //Output:8
         </script>
     </body>
 

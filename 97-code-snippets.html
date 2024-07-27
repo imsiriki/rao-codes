@@ -74,18 +74,20 @@
  /****************************************************************
  :: reverse a given string? ::
  *****************************************************************/
-const reverseString = (str) => str.split('').reverse().join('');
-const inputString = 'hello';
-const result3 = reverseString(inputString);// result3: 'olleh'
+  const reverseString = (str) => str.split('').reverse().join('');
+  const inputString = 'hello';
+  const result3 = reverseString(inputString);// result3: 'olleh'
 
 
 /****************************************************************
 :: In array find a common value ::
 *****************************************************************/
 const words = ["madb", "bas", "cab"];
-const commonCharacters = words.reduce((common, word) => {
-return common.filter(char => word.includes(char));
-}, words[0].split(''));
+
+  const commonCharacters = words.reduce((common, word) => {
+    return common.filter(char => word.includes(char));
+  }, words[0].split(''));
+
 console.log(commonCharacters); // Output: ["a", "b"]
 
 
@@ -132,10 +134,11 @@ let result23= friends.reduce((pre,cur)=>{
 },[]);
  console.log(result23)//Output:[ 'maths', 'computer', 'telugu', 'english', 'socal' ]
 
+
+
 /****************************************************************
 :: Group items on the basis of age of given array of object::
 *****************************************************************/
-
  let people = [
     {name:'Alice',age:21},
     {name:'ramu',age:20},
@@ -162,6 +165,69 @@ let result23= friends.reduce((pre,cur)=>{
  '22': [ { name: 'srinu', age: 22 } ]
  }
  */
+
+
+
+ /****************************************************************
+ :: Group items on the basis of age of given array of object::
+ *****************************************************************/
+ const peoplenew = [
+    { id: 1, name: 'Alice', age: 25 },
+    { id: 2, name: 'Bob', age: 30 },
+    { id: 3, name: 'Alice', age: 28 },
+  ];
+
+  const groupByProperty = (arr, property) => arr.reduce((grouped, obj) => ({
+    ...grouped, [obj[property]]: [...(grouped[obj[property]] || []), obj]
+  }), {});
+
+
+  const result234 = groupByProperty(peoplenew, 'name');
+  console.log(result234);
+
+ /*
+ Output:
+ {
+    Alice: [
+            { id: 1, name: 'Alice', age: 25 },
+            { id: 3, name: 'Alice', age: 28 }
+        ],
+    Bob: [ { id: 2, name: 'Bob', age: 30 } ]
+ }
+ */
+
+
+/****************************************************************
+ :: find the second-largest element in an array?::
+*****************************************************************/
+  const secondLargest = (arr) => [...new Set(arr)].sort((a, b) => b - a)[1];
+
+  const array = [5, 2, 8, 9, 2, 4, 7];
+  const result_2369 = secondLargest(array);
+
+  console.log(result_2369); //Output:8
+
+
+/****************************************************************
+ :: An array count the workds::
+*****************************************************************/
+ let myarray45 = ["hello", "world", "java", "hello", "java"];
+
+  function countWord(p) {
+    var count = {};
+    p.forEach((item) => {
+      if (count[item]) {
+        count[item]++
+      } else {
+        count[item] = 1;
+      }
+
+    });
+    return count;
+  }
+  console.log(countWord(myarray45));//Output:    { hello: 2, world: 1, java: 2 }
+
+
     </script>
   </body>
 </html>

@@ -227,6 +227,15 @@ let result23= friends.reduce((pre,cur)=>{
   }
   console.log(countWord(myarray45));//Output:    { hello: 2, world: 1, java: 2 }
 
+/****************************************************************
+ :: nth largest element in a sorted array::
+*****************************************************************/
+  let myarray47 = [12, 34, 21, 14, 67, 35, 64, 25, 5, 9];
+
+  const sortvalue = myarray47.sort((a, b) => a - b);
+  const nthLargest = sortvalue[sortvalue.length - 2];
+
+  console.log(nthLargest)
 
     </script>
   </body>

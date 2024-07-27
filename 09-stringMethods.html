@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Default Parameter Values</title>
+    </head>
+
+    <body>
+        <script>
+            charAt()------------- >Returns a string representing the character at the given index.==> const str = "Hello World"; str.charAt(0); / / "H"
+            charCodeAt()---------> Returns a number representing the UTF - 16 code unit value of the character at the given index.==> const str = "Hello World"; str.charCodeAt(0); // 72
+            codePointAt()
+            concat()-------------> Returns a new string containing the concatenation of the given strings.==> const str = "Hello"; const str2 = " World"; str.concat(str2); // "Hello World"
+            endsWith()-----------> Returns true if the string ends with the given string, otherwise false.==> const str = "Hello World"; str.endsWith("World"); // true
+            fromCharCode()
+            fromCodePoint()
+            includes()-----------> Returns true if the string contains the given string, otherwise false.==> const str = "Hello World"; str.includes("World"); // true
+            indexOf()------------> Returns the index within the string of the first occurrence of the specified value, or - 1 if not found.==> const str = "Hello World"; str.indexOf("World"); // 6
+            lastIndexOf()--------> Returns the index within the string of the last occurrence of the specified value, or - 1 if not found.==> const str = "Hello World"; str.lastIndexOf("World"); // 6
+            length
+            localeCompare()
+            match()-------------> Returns a list of matches of a regular expression against a string.==> const str = "Hello World"; str.match(/[A-Z]/); // ["H"]
+            matchAll()----------> Returns a list of matches of a regular expression against a string.==> const str = "Hello World"; str.matchAll(/[A-Z]/g); // ["H", "W"]// OR str.match(/[A-Z]/g); // ["H", "W"]
+            padEnd()------------> Returns a new string with some content padded to the end of the string.==>  const str = "Hello"; str.padEnd(15, "World"); // "HelloWorldWorld"
+            padStart()----------> Returns a new string with some content padded to the start of the string.==> const str = "Hello"; str.padStart(15, "World"); // "WorldWorldWorldHello"
+            repeat()------------> Returns a new string that contains the specified number of copies of the string. ==> const str = "Hello"; str.repeat(3); // "HelloHelloHello"
+            replace()-----------> Returns a new string with some or all matches of a regular expression replaced by a replacement string.==> const str = "Hello World"; str.replace("l", "*"); // "He*lo World"
+            replaceAll()--------> Returns a new string with some or all matches of a regular.=> const str = "Hello World"; str.replaceAll("l", "*"); // "He**o Wor*d"  OR; str.replace(/l/g, "*"); // "He**o Wor*d"
+            search()-----------> Returns the index within the string of the first occurrence of the specified value, or - 1 if not found.
+                EX: const str = "Hello World 1"; const regex = /[^\D\s]/g; str.search(regex); // 12
+            slice()-------------> Returns a new string containing the characters of the string from the given index to the end of the string.==> const str = "Hello World"; str.slice(6); // "World"
+            split()-------------> Returns an array of strings split at the given index. => const str = "Hello World"; str.split(" "); // ["Hello", "World"]
+            startsWith()--------> Returns true if the string starts with the given string, otherwise false.==>const str = "Hello World"; str.startsWith("Hello"); // true
+            substring()---------> Returns a new string containing the characters of the string from the given index to the end of the string.==> const str = "Hello World"; str.substring(1, 2); // "e"
+            substr()------------> NOTE: substr takes parameters as (from, length).Returns a new string containing the characters of the string from the given index to the end of the string. ==> 
+                      const str = "Hello World"; str.substr(1, 2); // "el"
+
+            toLowerCase()-------> Returns a new string with all the uppercase characters converted to lowercase.==> const str = "Hello World"; str.toLowerCase(); // "hello world"
+            toUpperCase()-------> Returns a new string with all the lowercase characters converted to uppercase.==> const str = "Hello World"; str.toUpperCase(); // "HELLO WORLD"
+            trim()--------------> Returns a new string with the leading and trailing whitespace removed.==>  const str = "  Hello World  "; str.trim(); // "Hello World"
+            trimEnd()-----------> Returns a new string with the trailing whitespace removed..==>  const str = "  Hello World  "; str.trimEnd(); // "  Hello World"
+            trimStart()---------> Returns a new string with the leading whitespace removed.==> onst str = "  Hello World  "; str.trimStart(); // "Hello World  "
+
+        </script>
+    </body>
+
+</html>

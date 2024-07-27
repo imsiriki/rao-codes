@@ -13,7 +13,7 @@
             var res = x.filter((item, index) => {
                 return x.indexOf(item) !== index
             });
-            console.log(" Duplicate values in Array:", res); //Output: Remove Duplicates: [2, 1, 3]
+            console.log(" Duplicate values in Array:", res); //Output:  Duplicates have arry: [2, 1, 3]
 
             //!Removed Duplicate values in Array // using filter
             var removedValues = x.filter((item, index) => {
@@ -28,7 +28,7 @@
             console.log("use setmethod", setmethod); //Output: use SETMETHOD: [1, 2, 3, 5]
 
             /*************:: second method :: *************/
-            let arr = [1, 2, 3, 4, 4, 2, 5, 6]
+            let arr = [1, 2, 3, 3, 2, 5, 6, 10];
 
             // EXAMPLE 3- using for loop
             let newArr = []
@@ -68,6 +68,42 @@
 
             // uniqueGuestList will be ["Alice", "Bob", "Charlie"]
             console.log(uniqueGuestList);
+
+
+/****************************************************************
+:: iRemove duplicates from an array and return unique values in O(n) complexity. ::
+*****************************************************************/
+
+let myarray23 = [1, 2, 3, 4, 3, 6, 5, 4];
+
+    function unique(arr) {
+        let items = {};
+        arr.forEach((item) => {
+            if (!items[item]) {
+                items[item] = item;
+            }
+        });
+        return Object.values(items);
+    }
+console.log(unique(myarray23));//Output:[ 1, 2, 3, 4, 5, 6 ]
+
+
+/****************************************************************
+ :: Print all duplicate elements of an array ::
+*****************************************************************/
+
+let myarray24 = [1, 1, 5, 6, 7, 7, 8, 9, 3, 4, 4];
+
+    function showDuplicates(arr) {
+        let result = arr.filter((item, index) => {
+            return arr.indexOf(item) !== index;
+        });
+        return result;
+    }
+
+console.log(showDuplicates(myarray24))//Output:[ 1, 7, 4 ]
+
+
         </script>
     </body>
 

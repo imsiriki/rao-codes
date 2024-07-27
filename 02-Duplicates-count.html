@@ -76,8 +76,69 @@
       console.log(countRepeatedWords(words)); //{ "I": 3, "am": 2, "not": 1, "gonna": 1, "live": 2, "forever,": 1, "but": 1, "wanna": 1, "while": 1, "alive": 1 }
 
 
+/****************************************************************
+:: in array find common object valuues count ::
+*****************************************************************/
+  const myData = [
+    { name: 'a', designation: 'manager' },
+    { name: 'b', designation: 'lead' },
+    { name: 'c', designation: 'lead' },
+    { name: 'd', designation: 'developer' },
+    { name: 'e', designation: 'developer' },
+    { name: 'f', designation: 'developer' },
+    { name: 'g', designation: 'developer' }
+  ];
 
-      
+  const designationCount = myData.reduce((acc, curr) => {
+    acc[curr.designation] = (acc[curr.designation] || 0) + 1;
+    return acc;
+  }, {});
+
+console.log(designationCount); //Output:{ manager: 1, lead: 2, developer: 4 }
+
+/****************************************************************
+:: Group items on the basis of age of given array of object::
+*****************************************************************/
+
+  let people = [
+    { name: 'Alice', age: 21 },
+    { name: 'ramu', age: 20 },
+    { name: 'mani', age: 20 },
+    { name: 'chdwick', age: 21 },
+    { name: 'srinu', age: 22 },
+  ];
+  function groubBy(ar) {
+    var check = {};
+    ar.forEach((item) => {
+      if (!check[item.age]) {
+        check[item.age] = [item];
+      } else {
+        check[item.age].push(item)
+      }
+    });
+    return check;
+  }
+  console.log(groubBy(people));
+/*OUTPUT
+{
+'20': [ { name: 'ramu', age: 20 }, { name: 'mani', age: 20 } ],
+'21': [ { name: 'Alice', age: 21 }, { name: 'chdwick', age: 21 } ],
+'22': [ { name: 'srinu', age: 22 } ]
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
       /*************:: EXAMPLE -4 find repeat words in string :: *************/
       /*************:: EXAMPLE -4 find repeat words in string :: *************/
       /*************:: EXAMPLE -4 find repeat words in string :: *************/

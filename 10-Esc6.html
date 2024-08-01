@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>currying</title>
+    </head>
+
+    <body>
+       
+        <script>
+/****************************************************************
+ :: Find Last method ::
+*****************************************************************/
+  //The findLast() method looks at an array from the end and gives you the value of the first element that meets a certain conditionon
+
+          const num = [3, 4, 6, 8];
+            let lastnumber = num.findLast((x) => x>5 );
+            console.log(lastnumber);//output 8
+
+            let num33 = [3, 5, 6, 7, 4, 5, 8, 4];
+                let ab = num33.findLast(a => a);
+                console.log(ab)//output 4
+        </script>
+    </body>
+
+</html>

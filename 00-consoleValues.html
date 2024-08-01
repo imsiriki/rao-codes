@@ -38,6 +38,16 @@
             console.log(NaN == NaN); // false
             console.log(isNaN(NaN)) // true
 
+            console.log(0 == false)   // true
+            console.log(0 === false)  // false
+            console.log( 1 == "1" )    // true
+            console.log(1 === "1")    // false
+            console.log(null == undefined) // true
+            console.log(null === undefined) // false
+            console.log('0' == false) // true
+            console.log('0' === false) // false
+            console.log(NaN == NaN) 
+            console.log(NaN === NaN) // false
 
             console.log(typeof []);//object
             function noParams() { }console.log(noParams.length);//0
@@ -60,7 +70,7 @@
             console.log([] == ![]);//true
             console.log(typeof null)//object
 
-         
+
             console.log([] == ![]);//true, expline: [] to true,![] evaluates to false, true==false => true
             console.log(typeof typeof 1);//string
             console.log([] == '');//true

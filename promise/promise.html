@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>currying</title>
+    </head>
+
+    <body>
+        <script>
+
+
+
+/****************************************************************
+:: promise.any() ::
+*****************************************************************/
+//The promise.any() method takes a collection of promises and allows you to respond to the first one that completes.successfully by returning a new promise.
+
+        // Create a Promise
+        const myPromise1 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 200, "King");
+        });
+
+        // Create another Promise
+        const myPromise2 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 100, "Queen");
+        });
+
+        // Run when Any promise fulfills
+        Promise.any([myPromise1, myPromise2]).then((x) => {
+        console.log(x);
+        });////output: Queen
+
+//========================================================================================
+        const promise1 = new Promise((resolve, reject) => {
+           setTimeout(() => resolve('Promise 1 resolved'), 1500);
+        });
+
+        const promise2 = new Promise((resolve, reject) => {
+          setTimeout(() => reject('Promise 2 rejected'), 500);
+        });
+
+        const promise3 = new Promise((resolve, reject) => {
+          setTimeout(() => resolve('Promise 3 resolved'), 100);
+        });
+
+
+        Promise.any([promise1, promise2, promise3])
+        .then(result => {
+          console.log('Fulfilled:', result);
+        })
+        .catch(error => {
+          console.log('Rejected:', error);
+        }); // OUTPUT: Fulfilled: Promise 3 resolved
+
+//========================================================================================
+        const promise11 = new Promise((resolve, reject) => {
+          setTimeout(resolve, 1000, "1 second");
+        });
+
+        const promise22 = new Promise((resolve, reject) => {
+          setTimeout(resolve, 2000, "2 second");
+        });
+
+        let promises = [promise11, promise22];
+
+        Promise.any(promises).then((firstResolved) => {
+          console.log(firstResolved); // outputs “1 second”
+        })
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>currying</title>
+    </head>
+
+    <body>
+        <script>
+
+
+
+/****************************************************************
+:: replaceAll ::
+*****************************************************************/
+//replaceAll method on string replaces all occurrence of particular string with passed string.It returns a new string, it does not modify the original string.
+   const strReplaceAll = "hello there, hello mr, hello how?";
+   const newStr = strReplaceAll.replaceAll("hello", "bye");
+   console.log(newStr);//OP: bye there, bye mr, bye how?
+
+    //====================================================================
+    let quoteReplaceAll = "all the world's a stage, and all the men and women merely players";
+    let newQuote = quoteReplaceAll.replaceAll("all", "most of");
+    console.log(newQuote);//OP: most of the world's a stage, and most of the men and women merely players
+
+/****************************************************************
+:: promise.any() ::
+*****************************************************************/
+//The promise.any() method takes a collection of promises and allows you to respond to the first one that completes.successfully by returning a new promise.
+
+   // Create a Promise
+    const myPromise1 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 200, "King");
+    });
+
+    // Create another Promise
+    const myPromise2 = new Promise((resolve, reject) => {
+        setTimeout(resolve, 100, "Queen");
+    });
+
+    // Run when Any promise fulfills
+    Promise.any([myPromise1, myPromise2]).then((x) => {
+        console.log(x);
+    }); //output: Queen
+
+/****************************************************************
+:: Numeric  separators ::
+*****************************************************************/
+//Numeric separators are a nicety that make looking at large number easier on the eyes. JavaScript can’t use commas like natural languages, because that symbol is already taken. So, ECMAScript 2021 introduced the underscore.
+    const num1 = 1_000_000_000;
+    const num2 = 1000000000;
+    console.log(num1 === num2);//op: true
+
+    //====================================================================
+    const numricNumber = 1_2_3_4_5;
+    console.log(numricNumber);//OP: 12345
+
+        </script>
+    </body>
+
+</html>

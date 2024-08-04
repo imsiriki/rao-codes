@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>currying</title>
+    </head>
+
+    <body>
+        <script>
+
+// Array findLast()
+// Array findLastIndex()
+// Array toReversed()
+// Array toSorted()
+// Array toSpliced()
+// Array with()
+// #! (Shebang)
+
+/****************************************************************
+ :: Find Last method ::
+*****************************************************************/
+    //The findLast() method looks at an array from the end and gives you the value of the first element that meets a certain conditionon
+
+    const num = [3, 4, 6, 8];
+    let lastnumber = num.findLast((x) => x > 5);
+    console.log(lastnumber);//output 8
+
+
+    /*************:: EXAMPLE 2 :: *************/
+    let num33 = [3, 5, 6, 7, 4, 5, 8, 4];
+    let ab = num33.findLast(a => a);
+    console.log(ab)//output 4
+
+
+    /*************:: EXAMPLE 3 :: *************/
+    const arr22 = [54, 34, 55, 75, 98, 77];
+    const lastEvenIndex = arr22.findLast((element) => {
+        return element % 2 === 0;
+    });
+    console.log(lastEvenIndex); //output 98
+
+
+    /*************:: EXAMPLE 4 :: *************/
+    const arr6 = [54, 34, 55, 75, 98, 77];
+    const myObject = { testCase: 5 };
+    const lastEvenIndex3 = arr6.findLast((element) => {
+        return element % myObject.testCase === 0;
+    });
+    console.log(lastEvenIndex3); // 75
+
+/****************************************************************
+:: FindLastIndex ::
+*****************************************************************/
+    const arr = [54, 34, 55, 75, 98, 77];
+    arr.findLastIndex(x => x % 6 === 0); //output: 0
+
+    /*************:: EXAMPLE 1 :: *************/
+    const temp = [27, 28, 30, 40, 42, 35, 30];
+    let pos = temp.findLastIndex(x => x > 40);
+    console.log(pos)//output: 4
+
+/****************************************************************
+:: toSorted::
+*****************************************************************/
+//toSorted has the same signature as Array.prototype.sort(), but it creates a new array instead of operating on the array itself.
+    let arr34 = [5, 4, 2, 3, 1]
+    arr34 === arr34.sort(); // true - [1, 2, 3, 4, 5]
+    arr34 === arr34.toSorted(); // false - [1, 2, 3, 4, 5]
+
+ //====================================================================
+    const numbers = [10, 5, 2, 7, 3, 9, 1, 6, 4];
+    const sortedNumbers = numbers.toSorted((a, b) => { return b - a });
+    console.log(sortedNumbers); // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+    console.log(numbers);//[10, 5, 2, 7, 3, 9, 1, 6, 4]//original cannot changed
+    const srinivas = numbers.toSorted((a, b) => { return a - b });
+    console.log(srinivas)//output [1, 2, 3, 4, 5, 6, 7, 9, 10]
+
+    //====================================================================
+    const numbersSORT = [10, 5, 2, 7, 3, 9, 1, 6, 4];
+    const sortedNumbersSORT = numbersSORT.sort((a, b) => { return b - a });
+    console.log(sortedNumbersSORT); // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    console.log(numbersSORT);//[10, 5, 2, 7, 3, 9, 1, 6, 4]//original  changed
+
+    const srinivasSORT = numbersSORT.sort((a, b) => { return a - b });
+    console.log(srinivasSORT)//output [1, 2, 3, 4, 5, 6, 7, 9, 10]
+    console.log(numbersSORT);//[1, 2, 3, 4, 5, 6, 7, 9, 10]//original changed
+
+
+ //====================================================================
+    const months = ["Jan", "Feb", "Mar", "Apr"];
+    const tosortedMethod = months.toSorted();
+    console.log(tosortedMethod)//['Apr', 'Feb', 'Jan', 'Mar']
+
+  //====================================================================
+    // Comparing objects
+    const objects = [{ name: "John", age: 30 }, { name: "Jane", age: 25 }, { name: "Bill", age: 40 }, { name: "Mary", age: 20 }];
+
+    const sortedObjects = objects.toSorted((a, b) => {
+        return a.name.localeCompare(b.name);
+    });
+    console.log(sortedObjects); //[{"name":"Bill","age":40},{"name":"Jane","age":25},{"name":"John","age":30},{"name":"Mary","age":20}]
+
+    //====================================================================
+    const sortedObjectsAage = objects.toSorted((a, b) => {
+        return a.age - b.age;
+    });
+    console.log(sortedObjectsAage);//output  [{"name": "Mary","age": 20},{"name": "Jane","age": 25},{"name": "John", "age": 30 },{"name": "Bill","age": 40}]
+    console.log(sortedObjectsAage.at(-1));//output {name: 'Bill', age: 40}
+
+/****************************************************************
+:: toReversed::
+*****************************************************************/
+//The difference between the new toReversed() method and the old reverse() method is that the new method creates a new array, keeping the original array unchanged, while the old method altered the original array.
+
+    const monthsAarry = ["Jan", "Feb", "Mar", "Apr"];
+    const reversedMethod = monthsAarry.toReversed();
+    console.log(reversedMethod)//output  ['Apr', 'Mar', 'Feb', 'Jan']
+
+ //====================================================================
+    ["a", "b", "c", "d", "e"].toReversed(); // ['e', 'd', 'c', 'b', 'a']
+
+
+ //====================================================================
+    let myreversearray = ["a","b","c","d","e"];
+    myreversearray.toReversed(); // ['e', 'd', 'c', 'b', 'a'] Actual arr will not change
+    myreversearray.reverse(); // ['e', 'd', 'c', 'b', 'a'] Actual arr will be changed
+
+
+/****************************************************************
+:: Array.prototype.with::
+*****************************************************************/
+ //Replacing an element with with()
+    const arr4 = ["I", "am", "the", "Walrus"];
+    // Replace the string "Walrus" with "Octopus".
+    const newArr4 = arr4.with(3, "Ape Man");
+    console.log(newArr4);// output: ----------------------['I', 'am', 'the', 'Ape Man']
+    const myarray = arr4.with(2,2,"ramu");
+    console.log(myarray);//output ['I', 'am', 2, 'Walrus'];
+
+/****************************************************************
+:: toSpliced ::
+*****************************************************************/
+    const splicedMonths = ["Jan", "Feb", "Mar", "Apr"];
+    const spliced = splicedMonths.toSpliced(0, 1);
+    console.log(spliced);//output['Feb', 'Mar', 'Apr']
+
+ //====================================================================
+    const spliced1 = splicedMonths.toSpliced(1, 1);
+    console.log(spliced1);//output ['Jan', 'Mar', 'Apr']
+
+ //====================================================================
+    const spliced2 = splicedMonths.toSpliced(1);
+    console.log(spliced2)//output //['Jan']
+
+ //====================================================================
+    const arrSpliced = ["red", "orange", "yellow", "green", "blue"];
+    const newArr = arrSpliced.toSpliced(2, 1, "pink", "cyan");
+
+    console.log(newArr); // ["red", "orange", "pink", "cyan", "green", "blue"]
+    console.log(newArr[3]); // 'cyan'
+    console.log(arrSpliced[3]); // 'green'
+
+        </script>
+    </body>
+
+</html>

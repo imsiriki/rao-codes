@@ -8,7 +8,13 @@
     <body>
         <script>
 
-
+    // String.prototype.replaceAll
+    // Promise.any
+    // WeakRef
+    // && Logical AND Assignment
+    // || Logical Or Assignment
+    // ?? Nullish Coalescing Assignment
+    // Numeric separators
 
 /****************************************************************
 :: replaceAll ::
@@ -44,6 +50,68 @@
     }); //output: Queen
 
 /****************************************************************
+:: (&&=), && Logical AND Assignment ::
+*****************************************************************/
+//The and assignment operator (&&=) tests the left side of an expression. If the left side is truthy, it assigns the right side of the expression. If it is falsy,
+//This operator assigns the right operand to the left operand if the left operand is truthy.
+
+    let x = 10;
+    let y = 20;
+    x &&= y;
+    console.log(x);// Outputs: 20
+    // Why? because x is truthy, it gets assigned the value of y
+
+//====================================================================
+    let emptyString = "";
+    emptyString &&= "bar";
+    console.log (emptyString); //Outputs: “”
+
+    let nonEmptyString1 = "foo";
+    nonEmptyString1 &&= "bar";
+    console.log(nonEmptyString); // “bar”
+
+/****************************************************************
+::(||=), || Logical Or Assignment ::
+*****************************************************************/
+//The or assignment operator is the opposite of the and assignment operator you just saw. We can use the same example from Listing 6, this time replacing &&= with ||=
+//The code snippet you selected demonstrates the use of the logical OR assignment (||=) operator in JavaScript.
+
+    let l = 0;
+    let m = 20;
+    l ||= m;
+    console.log(l); // Outputs: 20
+    // Why? because l is falsy, it gets assigned the value of m
+
+//Logical OR Assignment: The expression l ||= m is equivalent to l = l || m. Since l is 0 (a falsy value in JavaScript),
+//the expression evaluates to m, which is 20.
+//Output: Therefore, l is assigned the value of 20, and console.log(l) outputs 20.
+
+/****************************************************************
+:: (??=), ?? Nullish Coalescing Assignment ::
+*****************************************************************/
+//You can use the nullish assignment operator to test a variable for being null or undefined. If the variable is null or undefined,
+//This operator assigns the right operand to the left operand if the left operand is null or undefined, but not for other falsy values.
+
+let i= null;
+let j= 42;
+
+i ??= j;
+
+console.log(i); // Outputs: 42
+// Why? because i is null, it gets assigned the value of j
+
+let x1= 23;
+let y1= 42;
+x1 ??= y1;
+console.log(x1);// Outputs: 23
+
+let x2= 23;
+let y2= 42;
+x2 ??= y2;
+console.log(y2);// Outputs: 42
+
+
+/****************************************************************
 :: Numeric  separators ::
 *****************************************************************/
 //Numeric separators are a nicety that make looking at large number easier on the eyes. JavaScript can’t use commas like natural languages, because that symbol is already taken. So, ECMAScript 2021 introduced the underscore.
@@ -51,9 +119,16 @@
     const num2 = 1000000000;
     console.log(num1 === num2);//op: true
 
-    //====================================================================
+//====================================================================
     const numricNumber = 1_2_3_4_5;
     console.log(numricNumber);//OP: 12345
+
+//====================================================================
+    // Invalid use of separators
+    const invalid1 = 1_000_; // Error: trailing separator
+    const invalid2 = _1000; // Error: leading separator
+    const invalid3 = 1.0_0; // Error: separator after decimal point
+    const invalid4 = 0x_1A; // Error: separator before hexadecimal digits
 
         </script>
     </body>

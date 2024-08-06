@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>String Codes</title>
+    </head>
+    <body>
+        <script>
+
+/****************************************************************
+:: find the longest word in a given sentence ::
+*****************************************************************/
+    const longestWord = (sentence) => sentence.split(' ').reduce((longest, word) => word.length > longest.length ? word : longest, '');
+    const inputSentence = 'The quick brown fox jumpss over the lazy dog';
+    const result = longestWord(inputSentence); // result: 'jumpss'
+
+    /*************:: EXAMPLE 2- function :: *************/
+    function findLongestWord(str) {
+        const words = str.split(' ');
+        let longest = 0;
+        for (let word of words) {
+            if (word.length > longest) {
+                longest = word.length
+            }
+
+        }
+        return longest;
+    }
+    console.log(findLongestWord("this is srinivas rao "));//output: 8
+
+
+ /****************************************************************
+ :: reverse a given string? ::
+ *****************************************************************/
+    const reverseString = (str) => str.split('').reverse().join('');
+    const inputString = 'hello';
+    const result3 = reverseString(inputString);// result3: 'olleh'
+
+
+ /****************************************************************
+ :: Capitalize the first letter of each word ::
+ *****************************************************************/
+    function captilizeFirstletter(str) {
+        return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+    console.log(captilizeFirstletter('this is first time leteer'));// output: This Is First Time Leteer
+
+
+        </script>
+    </body>
+
+</html>

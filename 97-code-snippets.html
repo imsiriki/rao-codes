@@ -70,6 +70,20 @@
    const inputSentence = 'The quick brown fox jumpss over the lazy dog';
    const result = longestWord(inputSentence); // result: 'jumpss'
 
+ /*************:: EXAMPLE 2- function :: *************/
+   function findLongestWord(str) {
+      const words = str.split(' ');
+      let longest = 0;
+      for (let word of words) {
+        if (word.length > longest) {
+          longest = word.length
+        }
+
+      }
+      return longest;
+    }
+    console.log(findLongestWord("this is srinivas rao "));//output: 8
+
 
  /****************************************************************
  :: reverse a given string? ::
@@ -124,15 +138,15 @@ console.log(designationCount); //Output:{ manager: 1, lead: 2, developer: 4 }
 :: in objects find the array values ::
 *****************************************************************/
 let friends = [
-  {name:'srinivas',age:42, books:['maths'] },
-  {name:'chadwick',age:12, books:['computer','telugu'] },
-  {name:'Abhiram',age:6, books:['english','socal'] },
+{name:'srinivas',age:42, books:['maths'] },
+{name:'chadwick',age:12, books:['computer','telugu','maths'] },
+{name:'Abhiram',age:6, books:['english','socal','telugu'] },
 ]
 
 let result23= friends.reduce((pre,cur)=>{
-  return [...pre,...cur.books]
+return [...pre,...cur.books]
 },[]);
- console.log(result23)//Output:[ 'maths', 'computer', 'telugu', 'english', 'socal' ]
+console.log(result23);//Output:['maths', 'computer', 'telugu', 'maths', 'english', 'socal', 'telugu']
 
 
 
@@ -231,11 +245,17 @@ let result23= friends.reduce((pre,cur)=>{
  :: nth largest element in a sorted array::
 *****************************************************************/
   let myarray47 = [12, 34, 21, 14, 67, 35, 64, 25, 5, 9];
-
   const sortvalue = myarray47.sort((a, b) => a - b);
   const nthLargest = sortvalue[sortvalue.length - 2];
-
   console.log(nthLargest)
+
+ /****************************************************************
+ :: Capitalize the first letter of each word ::
+ *****************************************************************/
+    function captilizeFirstletter(str) {
+      return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+    console.log(captilizeFirstletter('this is first time leteer'));// output: This Is First Time Leteer
 
     </script>
   </body>

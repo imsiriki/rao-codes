@@ -35,9 +35,18 @@
           return data.split("").reverse().join("") == data;
         });
       }
-
       let checkArrayPalindrome = ["radar", "hello", "level", "world", "madam", "bba", "racecar"];
       console.log(findPalindrome(checkArrayPalindrome)); //OP:  ['radar', 'level', 'madam', 'racecar']
+
+
+/*************:: EXAMPLE 4 - separate palindrome number from array :: *************/
+      function isPalindrome(str) {
+        const reversed = str.split('').reverse().join('');
+        return str === reversed;
+      }
+      console.log(isPalindrome("racecar"));//true
+      console.log(isPalindrome("hello"));//false
+      console.log(isPalindrome("srinivas"));//false
     </script>
   </body>
 

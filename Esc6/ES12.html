@@ -86,29 +86,42 @@
 //the expression evaluates to m, which is 20.
 //Output: Therefore, l is assigned the value of 20, and console.log(l) outputs 20.
 
+
+
 /****************************************************************
 :: (??=), ?? Nullish Coalescing Assignment ::
 *****************************************************************/
 //You can use the nullish assignment operator to test a variable for being null or undefined. If the variable is null or undefined,
 //This operator assigns the right operand to the left operand if the left operand is null or undefined, but not for other falsy values.
 
-let i= null;
-let j= 42;
+    let i= null;
+    let j= 42;
 
-i ??= j;
+    i ??= j;
 
-console.log(i); // Outputs: 42
-// Why? because i is null, it gets assigned the value of j
+    console.log(i); // Outputs: 42
+    // Why? because i is null, it gets assigned the value of j
 
-let x1= 23;
-let y1= 42;
-x1 ??= y1;
-console.log(x1);// Outputs: 23
+    let x1= 23;
+    let y1= 42;
+    x1 ??= y1;
+    console.log(x1);// Outputs: 23
 
-let x2= 23;
-let y2= 42;
-x2 ??= y2;
-console.log(y2);// Outputs: 42
+    let x2= 23;
+    let y2= 42;
+    x2 ??= y2;
+    console.log(y2);// Outputs: 42
+
+    let x22= 23;
+    let y22= 42;
+    x22 ??= y22;
+    console.log(x22 ??= y22);// Outputs: 23
+
+
+    let name = 45;
+    let text = "missing";
+    let result33 = name ?? text;
+    console.log(result33) // Outputs: 45
 
 
 /****************************************************************

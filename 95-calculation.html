@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Calculation </title>
+    </head>
+
+    <body>
+        <script>
+
+/****************************************************************
+:: find  number is EVEN or ODD ::
+*****************************************************************/
+    function isEvenOrOdd(num) {
+        if (num % 2 === 0) {
+            return "Even";
+        } else {
+            return "Odd";
+        }
+    }
+
+    // Example usage:
+    console.log(isEvenOrOdd(4)); // Output: Even
+    console.log(isEvenOrOdd(7)); // Output: Odd
+
+
+/****************************************************************
+:: find  PRIME number  ::
+*****************************************************************/
+    function isPrime(num) {
+        if (num <= 1) return false; // Numbers less than or equal to 1 are not prime
+        if (num <= 3) return true;  // 2 and 3 are prime numbers
+
+        // Check for divisibility by 2 or 3
+        if (num % 2 === 0 || num % 3 === 0) return false;
+
+        // Check for divisibility from 5 to the square root of num
+        for (let i = 5; i * i <= num; i += 6) {
+            if (num % i === 0 || num % (i + 2) === 0) return false;
+        }
+
+        return true;
+    }
+
+    // Example usage:
+    console.log(isPrime(11)); // Output: true
+    console.log(isPrime(15)); // Output: false
+
+/****************************************************************
+:: find  Triangle  AREA calculatioon ::  (Area= 1/2*base*height)
+*****************************************************************/
+    function calculateTriangleArea(base, height) {
+        return 0.5 * base * height;
+    }
+
+    // Example usage:
+    let base = 10;
+    let height = 5;
+    let area = calculateTriangleArea(base, height);
+    console.log(`The area of the triangle is: ${area}`); // Output: The area of the triangle is: 25
+
+/****************************************************************
+:: find   factorial of a given number   ::
+*****************************************************************/
+    function factorial(n) {
+        if (n < 0) {
+            return "Factorial is not defined for negative numbers";
+        }
+        if (n === 0 || n === 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+    // Example usage:
+    console.log(factorial(5)); // (1*2*3*4*5) = Output: 120
+
+/****************************************************************
+:: SUM of array  ::
+*****************************************************************/
+    function sumArray(arr) {
+        return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    }
+
+    // Example usage:
+    const array = [1, 2, 3, 4, 5];
+    const sum = sumArray(array);
+    console.log(`The sum of the array elements is: ${sum}`); // Output: The sum of the array elements is: 15
+
+
+/****************************************************************
+:: Find largest SUM of any TWO elements in an array  ::
+*****************************************************************/
+    function largestSumOfTwo(arr) {
+        if (arr.length < 2) {
+            return "Array must contain at least two elements";
+        }
+
+        // Sort the array in descending order
+        arr.sort((a, b) => b - a);
+
+        // The largest sum will be the sum of the first two elements
+        return arr[0] + arr[1];
+    }
+
+    // Example usage:
+    const twoNumberArray = [1, 9, 3, 7, 5];
+    const largestSum = largestSumOfTwo(twoNumberArray);
+    console.log(`The largest sum of any two elements is: ${largestSum}`); // Output: The largest sum of any two elements is: 16
+
+
+        </script>
+    </body>
+
+</html>

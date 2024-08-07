@@ -257,6 +257,38 @@ console.log(result23);//Output:['maths', 'computer', 'telugu', 'maths', 'english
     }
     console.log(captilizeFirstletter('this is first time leteer'));// output: This Is First Time Leteer
 
+/****************************************************************
+  :: Two array lo same values ::
+ *****************************************************************/
+ function getIntersection(arr1, arr2) {
+    return arr1.filter(value => arr2.includes(value));
+  }
+
+  // Example usage:
+  const array1 = [1, 2, 3, 4, 5];
+  const array2 = [4, 5, 6, 7, 8];
+  const intersection = getIntersection(array1, array2);
+  console.log(intersection); // Output: [4, 5]
+
+
+  /****************************************************************
+    :: Two array lo not same values ::
+   *****************************************************************/
+
+  function getNotIntersection(arr11, arr22) {
+    const intersection = arr11.filter(value => arr22.includes(value));
+    const notIntersection = arr11.concat(arr22).filter(value => !intersection.includes(value));
+    return notIntersection;
+  }
+
+  // Example usage:
+  const array11 = [1, 2, 3, 4, 5];
+  const array22 = [4, 5, 6, 7, 8];
+  const notIntersection = getNotIntersection(array11, array22);
+  console.log(notIntersection); // Output: [1, 2, 3, 6, 7, 8]
+
+
+
     </script>
   </body>
 </html>
